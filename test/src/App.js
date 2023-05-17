@@ -9,7 +9,7 @@ import Header from './Components/header';
 import { ToastContainer, toast } from 'react-toastify';
 import { Container, Row , Col } from 'reactstrap';
 import Leftoption from './Components/LeftOptions';
-import {BrowserRouter as Router, Route } from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   // const btnHandle = () => { //Arrow function
   //   toast("This is toast");
@@ -31,7 +31,14 @@ function App() {
             <Col md ={4}>
             <Leftoption />
             </Col>
-            <Col md ={8}><Home /> </Col>
+            <Col md ={8}>
+                
+                <Route path="/" exact component={Home} />
+                <Route path="/addCourse" exact component={AddCourse} />
+                <Route path="/viewcourses" exact component={AllCourses} />
+              
+                
+            </Col>
           </Row>
         </Container>
         </Router>
